@@ -1,11 +1,17 @@
 import PyQt5
 from PyQt5 import QtWidgets, uic
+<<<<<<< HEAD
 
 import sys
+=======
+import sys
+from MainW import Ui_MainWindow
+>>>>>>> 5e47c3bfd931a498d2b631fde6fb4281e7afda20
 
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
+<<<<<<< HEAD
         uic.loadUi('C:/Users/uSER/PycharmProjects/PhotoresistTableSoftware/MainW.ui', self)
         # Кнопка 1
         self.button_1 = self.findChild(QtWidgets.QPushButton, 'pushButton_1')
@@ -85,10 +91,17 @@ class MainWindow(QtWidgets.QMainWindow):
 
         # Линия 1
         self.lineText_1 = self.findChild(QtWidgets.QLineEdit, 'lineEdit')
+=======
+        uic.loadUi('C:/Users/uSER/PycharmProjects/PhotoresistSoftware/MainW.ui', self)
+        # Кнопка 1
+        self.button = self.findChild(QtWidgets.QPushButton, 'pushButton')
+        self.button.clicked.connect(self.ButtonSend)
+>>>>>>> 5e47c3bfd931a498d2b631fde6fb4281e7afda20
 
         self.show()
 
 
+<<<<<<< HEAD
 
     def Button_1(self):
         print("But1")
@@ -140,6 +153,10 @@ class MainWindow(QtWidgets.QMainWindow):
         print("But24")
     def Button_25(self):
         print("But25")
+=======
+    def ButtonSend(self):
+        print('Send')
+>>>>>>> 5e47c3bfd931a498d2b631fde6fb4281e7afda20
 
 def GUI_Begin():
     app = QtWidgets.QApplication(sys.argv)
