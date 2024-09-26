@@ -8,8 +8,6 @@ def COMPort_CheckPorts():
     for port in ports:
         print(port)
 
-
-
 def COMPort_Init(comport):
     GBCOM = serial.Serial()
     GBCOM.baudrate = 115200

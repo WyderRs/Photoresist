@@ -90,6 +90,8 @@ class MainWindow(QtWidgets.QMainWindow):
 
 
 
+
+
     def Button_1(self):
         print("But1")
     def Button_2(self):

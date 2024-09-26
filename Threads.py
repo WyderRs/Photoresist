@@ -6,8 +6,6 @@ def ThreadCreate(port):
     thread.start()
     # thread.join() # This method stops programm for self exist
 
-
-
 def TR_ReadPort(port):
     COMPort_ReadPort(port)
 
