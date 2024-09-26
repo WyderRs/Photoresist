@@ -8,6 +8,7 @@ COMPort_CheckPorts()
 MainPort = COMPort_Init("COM14")
 COMPort_OpenPort(MainPort)
 
+
 if FlagStatusConnection == True:
     ThreadCreate(MainPort)
 
