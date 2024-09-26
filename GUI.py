@@ -6,7 +6,7 @@ import sys
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
-        uic.loadUi('C:/Users/uSER/PycharmProjects/PhotoresistTableSoftware/MainW.ui', self)
+        uic.loadUi('MainW.ui', self)
         # Кнопка 1
         self.button_1 = self.findChild(QtWidgets.QPushButton, 'pushButton_1')
         self.button_1.clicked.connect(self.Button_1)
