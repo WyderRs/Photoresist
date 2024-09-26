@@ -1,7 +1,12 @@
 import PyQt5
 from PyQt5 import QtWidgets, uic
-
 import sys
+from COMPort import COMPort_WritePort
+from config import GlobalVariables
+from COMPort import MainPort
+
+GLB_COM_Power = 0
+
 
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
@@ -89,11 +94,9 @@ class MainWindow(QtWidgets.QMainWindow):
         self.show()
 
 
-
-
-
     def Button_1(self):
-        print("But1")
+        COMPort_WritePort(MainPort, b'\xBB\xFF')
+        print("GLB_COM_Power")
     def Button_2(self):
         print("But2")
     def Button_3(self):
@@ -146,5 +149,4 @@ class MainWindow(QtWidgets.QMainWindow):
 def GUI_Begin():
     app = QtWidgets.QApplication(sys.argv)
     wind = MainWindow()
-
     app.exec_()

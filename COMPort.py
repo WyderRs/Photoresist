@@ -1,6 +1,5 @@
 import serial
 import serial.tools.list_ports
-
 FlagStatusConnection = False
 
 def COMPort_CheckPorts():
@@ -27,7 +26,7 @@ def COMPort_Init(comport):
 def COMPort_OpenPort(GBCOM):
     try:
         GBCOM.open()
-        print(f"Comport: {GBCOM.port} open")
+        print(f"Comport: {GBCOM.port} connected")
         GBCOM.reset_input_buffer()
         GBCOM.reset_output_buffer()
         FlagStatusConnection = True
@@ -39,10 +38,19 @@ def COMPort_ClosePort(GBCOM):
     GBCOM.close()
     print(f"Comport: {GBCOM.port} closed")
 
-def COMPort_WritePort(data, ser):
-    ser.write(data)
+def COMPort_WritePort(GBCOM, data):
+    print("Send", data)
+    GBCOM.write(data)
 
-def COMPort_ReadPort(GBCOM):
-    GBRecvData = ser.read(10)
-    print("2")
+def COMPort_ReadPort(ser):
+    while True:
+        # GBRecvData = ser.read(1)
+        # print(GBRecvData.decode('utf-8'))
+        pass
 
+
+COMPort_CheckPorts()
+MainPort = COMPort_Init("COM6")
+COMPort_OpenPort(MainPort)
+
+ThreadCreate(MainPort)
